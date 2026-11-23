@@ -100,7 +100,7 @@ code.url{white-space:nowrap;font-size:.8em}ol.steps li{min-height:38px}
 .shot .ring b{position:absolute;right:-3px;top:-15px;background:var(--warn);color:#fff;font-size:12px;line-height:1;padding:4px 9px;border-radius:99px}
 .cap{font-size:13px;color:var(--mute);margin:8px 0 0;line-height:1.6}
 a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--teal);color:#fff;font-weight:700;text-decoration:none}
-.flow4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.flow4{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}
 .flow4 .b{border-radius:14px;padding:14px 14px 12px;border:1px solid var(--line);background:var(--paper)}
 .flow4 .b.h{background:var(--ocher-bg);border-color:#e3cd9b}
 .flow4 .b.a{background:var(--teal-bg);border-color:#a9d3cf}
@@ -122,15 +122,16 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 <p class="hint">오른쪽 화살표 키, 아래 버튼, 화면 좌우 밀기로 넘길 수 있습니다.</p></div>
 </div></section>
 <section class="page" id="pg1" data-label="오늘의 흐름"><div class="inner"><h2><span class="no">1</span>오늘의 흐름</h2>
-<p class="sub">평가는 구상에서 시작해서 기록으로 끝납니다. 오늘은 이 네 걸음을 따라갑니다.</p>
+<p class="sub">평가는 구상에서 시작해서 기록으로 끝납니다. 오늘은 이 다섯 걸음을 따라갑니다.</p>
 <div class="flow4">
 <div class="b h"><b class="k">① 구상</b><small>Gemini</small>어떤 평가를 할지 아이디어를 받고 고릅니다.</div>
-<div class="b a"><b class="k">② 설계</b><small>클리포 · 평가설계</small>성취기준을 골라 채점 기준을 만듭니다.</div>
-<div class="b a"><b class="k">③ 채점</b><small>클리포 · 자동 채점</small>답안을 분석해 예상 점수와 근거를 받습니다.</div>
-<div class="b h"><b class="k">④ 피드백·기록</b><small>클리포 · 교사 확정</small>피드백과 세특 초안을 받아 고쳐 확정합니다.</div>
+<div class="b a"><b class="k">② 문서화</b><small>Claude · 한글 파일</small>확정한 내용을 hwpx 파일로 만들어 저장합니다.</div>
+<div class="b a"><b class="k">③ 설계</b><small>클리포 · 평가설계</small>성취기준을 골라 채점 기준을 만듭니다.</div>
+<div class="b a"><b class="k">④ 채점</b><small>클리포 · 자동 채점</small>답안을 분석해 예상 점수와 근거를 받습니다.</div>
+<div class="b h"><b class="k">⑤ 피드백·기록</b><small>클리포 · 교사 확정</small>피드백과 세특 초안을 받아 고쳐 확정합니다.</div>
 </div>
 <div class="gold"><b>그래서 구상부터 합니다.</b><br>채점 기준을 만들려면 평가할 성취기준과 문항이 먼저 있어야 합니다.<br>구상은 사람이 방향을 잡고, AI에게는 후보를 받습니다.</div>
-<div class="note">먼저 ①을 다룹니다. ②~④는 뒤쪽 클리포 장에서 이어집니다.</div>
+<div class="note">먼저 ①과 ②를 다룹니다. ③~⑤는 뒤쪽 클리포 장에서 이어집니다.</div>
 </div></section>
 <section class="page" id="pg2" data-label="교육용 Gemini 접속"><div class="inner"><h2><span class="no">2</span>구상 도구: AIEP에서 교육용 Gemini 열기</h2>
 <p class="sub">Gemini는 인천교육청 AIEP 안의 도구모음에서 바로 열 수 있습니다.</p>
@@ -188,7 +189,29 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 <div class="card"><p><span class="tag w">3</span><b>답이 나오는가</b></p><p style="margin:0">문항을 고르면 교사가 직접 한 번 풉니다. 앞 장처럼 검산해 보면 채점 포인트도 선명해집니다.</p></div>
 <div class="card"><p><span class="tag w">4</span><b>지도서·평가계획서와 맞는가</b></p><p style="margin:0">성취기준 코드, 교과서 쪽수, 배점이 실제 자료와 같은지 대조합니다. AI가 쪽수를 틀리게 적을 수 있습니다.</p></div>
 </div></section>
-<section class="page" id="pg8" data-label="클리포란"><div class="inner"><h2><span class="no">7</span>클리포는 어떤 도구인가</h2>
+<section class="page" id="pg8" data-label="Claude로 한글 파일"><div class="inner"><h2><span class="no">7</span>확정한 구상을 한글(hwpx) 파일로: Claude</h2>
+<p class="sub">Gemini에서 문항과 채점 기준을 다듬어 확정한 뒤, 문서 파일로 저장하는 일은 Claude가 맡았습니다.</p>
+<div class="prompt">
+<div class="ph"><span class="n">2</span><b>hwpx 파일로 만들기</b><button class="copy" data-t="p2">복사</button></div>
+<pre id="p2">이걸 바탕으로 hwpx 파일로 만들어줘.
+문제들도 있는데 전부 수학 수식은 한글에서 사용하는 수식으로 입력해서 넣어줘야 해.</pre>
+<div class="why"><div><span class="tag">넣을 것</span>Gemini에서 확정한 평가 기준안, 채점 기준표, 평가지 내용을 함께 붙여 넣거나 올립니다.</div><div><span class="tag">핵심</span>수식을 그림이 아니라 <b>한글 수식</b>으로 넣으라고 말하는 한 줄입니다.</div></div>
+</div>
+<div class="grid2">
+<div class="card"><p><span class="tag o">받은 파일</span></p><p style="margin:0"><b>전체본</b>은 기준안과 채점 기준표, 학생 평가지, 모범 답안, 가상 학생 답안 10선이 쪽을 나누어 들어 있습니다. <b>학생 배부용</b>은 평가지만 따로 뽑은 파일입니다.</p></div>
+<div class="card"><p><span class="tag o">수식</span></p><p style="margin:0">수식은 한글의 수식 편집기 개체로 들어가서, 문서에서 더블클릭하면 고칠 수 있습니다. 이 시연에서는 85개 정도였습니다.</p></div>
+</div>
+<p style="margin:4px 0 10px"><a class="btn" href="https://claude.ai/share/bda8f6cd-6e7c-4220-8b51-09bbabd51b02" target="_blank" rel="noopener">Claude 대화 열어 보기 ↗</a></p>
+<p class="cap">공유된 대화에는 올린 자료가 숨겨져 있어서 프롬프트와 Claude의 답이 보입니다.</p>
+</div></section>
+<section class="page" id="pg9" data-label="받은 파일 확인"><div class="inner"><h2><span class="no">8</span>받은 한글 파일에서 확인할 세 가지</h2>
+<p class="sub">Claude가 파일과 함께 직접 알려 준 점입니다. 이번에도 마지막 확인은 사람이 합니다.</p>
+<div class="card"><p><span class="tag w">1</span><b>한글에서 열어 보기</b></p><p style="margin:0">이 환경에는 한글 프로그램이 없어서 열리는지는 확인하지 못하고, 파일 구조와 문법 검사만 통과한 상태라고 했습니다. 열리지 않거나 수식과 표 크기가 어색하면 Claude에게 그대로 알려 고치게 합니다.</p></div>
+<div class="card"><p><span class="tag w">2</span><b>모범 답안은 누구의 것인가</b></p><p style="margin:0">자료에 모범 답안이 없어서 Claude가 채점 기준표와 학생 답안을 바탕으로 썼다고 했습니다. 반례(x=2)와 교점((2, 4)) 같은 값도 Claude가 잡은 것입니다. 교사의 모범 답안으로 바꾸거나 직접 풀어 확인합니다.</p></div>
+<div class="card"><p><span class="tag w">3</span><b>배점이 맞는가</b></p><p style="margin:0">기준안의 "서·논술 18점 + 관찰 2점"과 채점 기준표의 6+6+6+2점이 맞지 않고 기본점수 10점의 위치도 분명하지 않아, Claude가 원문 그대로 두었다고 했습니다. 이런 모순은 교사가 정리해야 합니다.</p></div>
+<div class="note">Claude는 파일을 만든 <b>스크립트</b>도 함께 주었습니다. 내용을 고친 뒤 다시 실행하면 파일이 새로 만들어집니다.</div>
+</div></section>
+<section class="page" id="pg10" data-label="클리포란"><div class="inner"><h2><span class="no">9</span>클리포는 어떤 도구인가</h2>
 <p class="sub">구상한 평가를 채점하고 기록하는 데까지 이어 주는 교사용 AI 서비스입니다.</p>
 <div class="grid2">
 <div class="card"><b>평가설계 AI</b><p style="margin:8px 0 0">국가 교육과정 성취기준을 바탕으로 서·논술형 채점 기준을 만듭니다.</p></div>
@@ -198,7 +221,7 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 </div>
 <p class="cap">참고: 전 과목 수행평가를 종합한 리포트 기능도 있지만 학교 단위로 도입할 때만 쓸 수 있습니다. 소개 페이지 <a href="https://clipo.ai/" target="_blank" rel="noopener">clipo.ai</a> 기준입니다.</p>
 </div></section>
-<section class="page" id="pg9" data-label="클리포 흐름"><div class="inner"><h2><span class="no">8</span>클리포의 한 학기 흐름</h2>
+<section class="page" id="pg11" data-label="클리포 흐름"><div class="inner"><h2><span class="no">10</span>클리포의 한 학기 흐름</h2>
 <p class="sub">클리포는 평가의 세 시기에 걸쳐 쓰도록 소개되어 있습니다.</p>
 <table>
 <tr><th style="width:110px">시기</th><th>하는 일</th><th style="width:34%">오늘 연결되는 곳</th></tr>
@@ -208,7 +231,7 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 </table>
 <div class="note">AI가 내는 점수는 <b>예상 점수</b>입니다. 최종 점수와 기록은 교사가 확정합니다. 1차시의 H-A-H와 같은 순서입니다.</div>
 </div></section>
-<section class="page" id="pg10" data-label="시작 전에"><div class="inner"><h2><span class="no">9</span>시작 전에 알아둘 것</h2>
+<section class="page" id="pg12" data-label="시작 전에"><div class="inner"><h2><span class="no">11</span>시작 전에 알아둘 것</h2>
 <div class="grid2">
 <div class="card"><b>무료 체험</b><p style="margin:8px 0 0">6개월 무료 체험이 있고, 신용카드 등록 없이 시작할 수 있다고 안내되어 있습니다.</p></div>
 <div class="card"><b>AI 크레딧</b><p style="margin:8px 0 0">AI 기능을 한 번 실행할 때 학생 한 명당 크레딧 1개가 쓰입니다. 데일리 크레딧은 매일 자정에 다시 채워집니다.</p></div>
@@ -217,7 +240,7 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 <div class="warn"><b>학생 정보는 필요한 만큼만.</b> 답안에 이름이나 학번이 함께 들어 있다면, 채점에 필요한 만큼만 넣고 그 밖의 개인정보는 가립니다.</div>
 <p class="cap">이용 조건은 소개 페이지 안내 기준이며 바뀔 수 있습니다.</p>
 </div></section>
-<section class="page" id="pg11" data-label="실습"><div class="inner"><h2><span class="no">10</span>내 구상으로 클리포 채점 기준 만들기</h2>
+<section class="page" id="pg13" data-label="실습"><div class="inner"><h2><span class="no">12</span>내 구상으로 클리포 채점 기준 만들기</h2>
 <p class="sub">구상에서 고른 문항 하나를 들고 클리포로 넘어갑니다.</p>
 <div class="card"><ol class="steps">
 <li><b>가져갈 것 챙기기.</b> 고른 문항(안), 성취기준 코드, Gemini가 준 채점 포인트를 한곳에 모읍니다.</li>
