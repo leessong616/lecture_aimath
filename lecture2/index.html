@@ -109,10 +109,33 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 @media(max-width:860px){.flow4{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.flow4{grid-template-columns:1fr}}
 .math{font-family:'IBM Plex Sans KR',sans-serif;white-space:nowrap}
+
+#part{font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--ocher-bg);color:var(--ocher);white-space:nowrap}
+body[data-part=clipo] #part{background:var(--teal-bg);color:var(--teal)}
+body[data-part=clipo] #bar{background:var(--teal)}
+body[data-part=clipo] #bottom button{border-color:var(--teal);color:var(--teal)}
+body[data-part=clipo] #bottom button.primary{background:var(--teal);color:#fff}
+body[data-part=clipo] #dots i.on{background:var(--teal)}
+#dots i.c{background:#b9d9d5}
+#dots i.c.on{background:var(--teal)}
+.page[data-part=clipo] h2 .no{color:var(--teal)}
+.page[data-part=clipo] th{background:var(--teal-bg)}
+.page.pcover{background:linear-gradient(135deg,#d3eae7 0%,#eaf4f1 45%,#faf6ee 100%)}
+.pcover .cover{position:relative;z-index:1}
+.pcover .eyebrow{color:var(--teal)}
+.pcover h1{font-size:clamp(34px,6vw,54px)}
+.pcover .pc-big{position:absolute;right:5%;bottom:2%;font-family:'Gowun Batang',serif;font-size:clamp(160px,26vw,300px);line-height:1;color:rgba(31,122,120,.13);pointer-events:none;user-select:none}
+.pc-path{display:flex;align-items:stretch;gap:12px;flex-wrap:wrap;margin:0 0 34px}
+.pc-chip{border:1px solid var(--line);background:rgba(255,253,248,.7);border-radius:14px;padding:10px 16px;font-weight:700;font-size:15px;color:var(--mute);line-height:1.5}
+.pc-chip small{display:block;font-weight:400;font-size:13px}
+.pc-chip.p1{border-color:#e3cd9b;background:var(--ocher-bg);color:var(--ocher)}
+.pc-chip.on{border-color:var(--teal);background:var(--teal);color:#fff;box-shadow:0 6px 18px rgba(31,122,120,.25)}
+.pc-arrow{display:grid;place-items:center;font-size:26px;color:var(--teal)}
+.urlrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 </style>
 </head>
 <body>
-<div id="top"><b>2차시</b><span id="top-label"></span><span style="margin-left:auto" id="cnt"></span><div id="bar"></div></div>
+<div id="top"><b>2차시</b><span id="part"></span><span id="top-label"></span><span style="margin-left:auto" id="cnt"></span><div id="bar"></div></div>
 <div id="stage">
 <section class="page" id="pg0" data-label="표지"><div class="inner"><div class="cover"><p class="eyebrow">교과별 AI 디지털 수업 실천과정 · 2차시</p>
 <h1>서·논술형 평가를<br><span class="nw">Gemini와</span> <span class="nw">클리포로</span> 만들고 채점하기</h1>
@@ -131,7 +154,7 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 <div class="b h"><b class="k">⑤ 피드백·기록</b><small>클리포 · 교사 확정</small>피드백과 세특 초안을 받아 고쳐 확정합니다.</div>
 </div>
 <div class="gold"><b>그래서 구상부터 합니다.</b><br>채점 기준을 만들려면 평가할 성취기준과 문항이 먼저 있어야 합니다.<br>구상은 사람이 방향을 잡고, AI에게는 후보를 받습니다.</div>
-<div class="note">먼저 ①과 ②를 다룹니다. ③~⑤는 뒤쪽 클리포 장에서 이어집니다.</div>
+<div class="note"><b>PART 1 · Gemini·Claude</b>에서 ①과 ②를, <b>PART 2 · 클리포로 확장하기</b>에서 ③~⑤를 다룹니다.</div>
 </div></section>
 <section class="page" id="pg2" data-label="교육용 Gemini 접속"><div class="inner"><h2><span class="no">2</span>구상 도구: AIEP에서 교육용 Gemini 열기</h2>
 <p class="sub">Gemini는 인천교육청 AIEP 안의 도구모음에서 바로 열 수 있습니다.</p>
@@ -211,8 +234,16 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 <div class="card"><p><span class="tag w">3</span><b>배점이 맞는가</b></p><p style="margin:0">기준안의 "서·논술 18점 + 관찰 2점"과 채점 기준표의 6+6+6+2점이 맞지 않고 기본점수 10점의 위치도 분명하지 않아, Claude가 원문 그대로 두었다고 했습니다. 이런 모순은 교사가 정리해야 합니다.</p></div>
 <div class="note">Claude는 파일을 만든 <b>스크립트</b>도 함께 주었습니다. 내용을 고친 뒤 다시 실행하면 파일이 새로 만들어집니다.</div>
 </div></section>
-<section class="page" id="pg10" data-label="클리포란"><div class="inner"><h2><span class="no">9</span>클리포는 어떤 도구인가</h2>
+<section class="page pcover" id="pg10" data-label="클리포로 확장하기" data-part="clipo"><div class="inner"><div class="cover"><div class="pc-path"><div class="pc-chip p1">PART 1 · Gemini · Claude<small>구상하고 문서로 만들기</small></div><div class="pc-arrow">→</div><div class="pc-chip on">PART 2 · 클리포<small>설계 · 채점 · 기록</small></div></div>
+<p class="eyebrow">PART 2</p>
+<h1>클리포로 확장하기</h1>
+<p class="lead"><span class="ln">Gemini로 구상하고 Claude로 문서까지 만들었습니다.</span>
+<span class="ln">이제 그 평가를 클리포로 가져가 채점 기준을 만들고 채점합니다.</span></p></div>
+<div class="pc-big">2</div>
+</div></section>
+<section class="page" id="pg11" data-label="클리포란" data-part="clipo"><div class="inner"><h2><span class="no">9</span>클리포는 어떤 도구인가</h2>
 <p class="sub">구상한 평가를 채점하고 기록하는 데까지 이어 주는 교사용 AI 서비스입니다.</p>
+<div class="card urlrow"><span class="tag">주소</span><code class="url" style="font-size:.95em">https://clipo.ai/</code><a class="btn" href="https://clipo.ai/" target="_blank" rel="noopener" style="margin-left:auto">클리포 열기 ↗</a></div>
 <div class="grid2">
 <div class="card"><b>평가설계 AI</b><p style="margin:8px 0 0">국가 교육과정 성취기준을 바탕으로 서·논술형 채점 기준을 만듭니다.</p></div>
 <div class="card"><b>자동 채점 AI</b><p style="margin:8px 0 0">학생의 서술형 답안을 분석해 예상 점수와 채점 근거를 보여 줍니다.</p></div>
@@ -221,7 +252,7 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 </div>
 <p class="cap">참고: 전 과목 수행평가를 종합한 리포트 기능도 있지만 학교 단위로 도입할 때만 쓸 수 있습니다. 소개 페이지 <a href="https://clipo.ai/" target="_blank" rel="noopener">clipo.ai</a> 기준입니다.</p>
 </div></section>
-<section class="page" id="pg11" data-label="클리포 흐름"><div class="inner"><h2><span class="no">10</span>클리포의 한 학기 흐름</h2>
+<section class="page" id="pg12" data-label="클리포 흐름" data-part="clipo"><div class="inner"><h2><span class="no">10</span>클리포의 한 학기 흐름</h2>
 <p class="sub">클리포는 평가의 세 시기에 걸쳐 쓰도록 소개되어 있습니다.</p>
 <table>
 <tr><th style="width:110px">시기</th><th>하는 일</th><th style="width:34%">오늘 연결되는 곳</th></tr>
@@ -231,7 +262,7 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 </table>
 <div class="note">AI가 내는 점수는 <b>예상 점수</b>입니다. 최종 점수와 기록은 교사가 확정합니다. 1차시의 H-A-H와 같은 순서입니다.</div>
 </div></section>
-<section class="page" id="pg12" data-label="시작 전에"><div class="inner"><h2><span class="no">11</span>시작 전에 알아둘 것</h2>
+<section class="page" id="pg13" data-label="시작 전에" data-part="clipo"><div class="inner"><h2><span class="no">11</span>시작 전에 알아둘 것</h2>
 <div class="grid2">
 <div class="card"><b>무료 체험</b><p style="margin:8px 0 0">6개월 무료 체험이 있고, 신용카드 등록 없이 시작할 수 있다고 안내되어 있습니다.</p></div>
 <div class="card"><b>AI 크레딧</b><p style="margin:8px 0 0">AI 기능을 한 번 실행할 때 학생 한 명당 크레딧 1개가 쓰입니다. 데일리 크레딧은 매일 자정에 다시 채워집니다.</p></div>
@@ -240,7 +271,7 @@ a.btn{display:inline-block;padding:9px 18px;border-radius:10px;background:var(--
 <div class="warn"><b>학생 정보는 필요한 만큼만.</b> 답안에 이름이나 학번이 함께 들어 있다면, 채점에 필요한 만큼만 넣고 그 밖의 개인정보는 가립니다.</div>
 <p class="cap">이용 조건은 소개 페이지 안내 기준이며 바뀔 수 있습니다.</p>
 </div></section>
-<section class="page" id="pg13" data-label="실습"><div class="inner"><h2><span class="no">12</span>내 구상으로 클리포 채점 기준 만들기</h2>
+<section class="page" id="pg14" data-label="실습" data-part="clipo"><div class="inner"><h2><span class="no">12</span>내 구상으로 클리포 채점 기준 만들기</h2>
 <p class="sub">구상에서 고른 문항 하나를 들고 클리포로 넘어갑니다.</p>
 <div class="card"><ol class="steps">
 <li><b>가져갈 것 챙기기.</b> 고른 문항(안), 성취기준 코드, Gemini가 준 채점 포인트를 한곳에 모읍니다.</li>
@@ -257,13 +288,13 @@ var pages=[].slice.call(document.querySelectorAll('.page'));
 var n=pages.length,cur=0;
 var top=document.getElementById('top-label'),bar=document.getElementById('bar'),cnt=document.getElementById('cnt');
 var prev=document.getElementById('prev'),next=document.getElementById('next'),dots=document.getElementById('dots');
-pages.forEach(function(p,i){var d=document.createElement('i');d.title=p.dataset.label;d.onclick=function(){go(i)};dots.appendChild(d)});
+pages.forEach(function(p,i){var d=document.createElement('i');d.title=p.dataset.label;if(p.dataset.part==='clipo')d.className='c';d.onclick=function(){go(i)};dots.appendChild(d)});
 function go(i,keepHash){
   cur=Math.max(0,Math.min(n-1,i));
   pages.forEach(function(p,k){p.classList.toggle('on',k===cur)});
   [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===cur)});
   pages[cur].scrollTop=0;
-  top.textContent=pages[cur].dataset.label;
+  top.textContent=pages[cur].dataset.label;var pt=pages[cur].dataset.part==='clipo';document.body.dataset.part=pt?'clipo':'';var pe=document.getElementById('part');pe.textContent=pages[cur].dataset.label==='표지'?'':(pt?'PART 2 · 클리포':'PART 1 · Gemini·Claude');pe.style.display=pe.textContent?'':'none';
   cnt.textContent=(cur+1)+' / '+n;
   bar.style.width=((cur+1)/n*100)+'%';
   prev.disabled=cur===0;next.disabled=cur===n-1;
