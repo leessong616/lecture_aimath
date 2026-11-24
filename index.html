@@ -36,7 +36,7 @@ aside svg{position:absolute;inset:0;width:100%;height:100%}
 </head>
 <body>
 <main>
-<div class="eyebrow">수학과 · 교사 연수</div>
+<div class="eyebrow"><span id="eb">수학과 · 교사 연수</span></div>
 <h1>교과별 AI 디지털<br>수업 실천과정</h1>
 <p class="sub">수학 수업과 평가에 AI를 붙여 보는 세 번의 연수입니다.</p>
 <div class="rows">
@@ -67,7 +67,14 @@ function show(links){
   links.forEach(function(l,i){var a=document.getElementById('r'+i);if(a)a.href=l.url});
   document.getElementById('gate').style.display='none';
 }
+if(/[?&]teacher\b/.test(location.search)){
+  ['/lecture/','/lecture2/','/lecture3/'].forEach(function(u,i){document.getElementById('r'+i).href=u+'?teacher'});
+  document.getElementById('gate').style.display='none';
+  document.getElementById('eb').textContent='강의자용 · 쪽을 넘기면 선생님 화면이 따라옵니다';
+  document.title='[강의자] '+document.title;
+}else{
 try{var saved=sessionStorage.getItem(KEY);if(saved)show(JSON.parse(saved))}catch(e){}
+}
 f.addEventListener('submit', function(e){
   e.preventDefault();
   msg.textContent = ''; go.disabled = true; go.textContent = '확인 중…';
