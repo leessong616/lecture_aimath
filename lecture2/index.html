@@ -94,6 +94,30 @@ ol.steps li{padding-bottom:6px}
 .lead{max-width:none}.ln{display:block}.nw{white-space:nowrap}
 code.url{white-space:nowrap;font-size:.8em}ol.steps li{min-height:38px}
 
+#pg0 .inner{max-width:1100px}
+.covgrid{flex-direction:row;align-items:center;gap:44px}
+.covtxt{flex:1;min-width:0}
+.qrcard{flex:none;width:292px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;box-shadow:0 10px 30px rgba(120,90,30,.14)}
+.qrcard .qh{display:flex;align-items:center;gap:8px;margin:0 0 4px;font-weight:700;font-size:15px}
+.qrcard .qd{margin:0 0 10px;color:var(--mute);font-size:14px;line-height:1.5}
+.qrcard img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.qrcard .qn{margin:12px 0 0;font-size:13.5px;line-height:1.65;color:#4a463e}
+.qrcard .qn b{color:var(--warn)}
+@media(max-width:860px){.covgrid{flex-direction:column;align-items:stretch;gap:26px}.qrcard{width:min(100%,320px)}}
+
+.joincard{margin:18px 0 14px;max-width:560px}
+.joinrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+code.joinurl{font-size:21px;font-weight:700;white-space:nowrap;padding:4px 10px}
+.joinbtn{margin-left:auto;display:inline-block;padding:8px 16px;border-radius:10px;background:var(--teal);color:#fff;font-weight:700;text-decoration:none}
+
+#pg8 .steps{display:grid;grid-auto-flow:column;grid-template-rows:repeat(4,auto);column-gap:28px}
+@media(max-width:720px){#pg8 .steps{grid-auto-flow:row;grid-template-rows:none}}
+.shot{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;line-height:0}
+.shot img{width:100%;height:auto;display:block}
+.shot .ring{position:absolute;left:52.2%;top:69.6%;width:19.4%;height:24%;border:3px solid var(--warn);border-radius:12px;box-shadow:0 0 0 3px rgba(168,67,44,.18)}
+.shot .ring b{position:absolute;right:-3px;top:-15px;background:var(--warn);color:#fff;font-size:12px;line-height:1;padding:4px 9px;border-radius:99px}
+.cap{font-size:13px;color:var(--mute);margin:8px 0 0;line-height:1.6}
+
 .shot{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;line-height:0}
 .shot img{width:100%;height:auto;display:block}
 .shot .ring{position:absolute;left:52.2%;top:69.6%;width:19.4%;height:24%;border:3px solid var(--warn);border-radius:12px;box-shadow:0 0 0 3px rgba(168,67,44,.18)}
@@ -137,6 +161,8 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 .p1c .pc-arrow{color:var(--ocher)}
 .pc-chip.on1{border-color:var(--ocher);background:var(--ocher);color:#fff;box-shadow:0 6px 18px rgba(180,120,31,.28)}
 .pc-chip.m2{border-color:#a9d3cf;background:rgba(225,241,239,.7);color:var(--teal)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+@media(max-width:700px){.grid3{grid-template-columns:1fr}}
 .urlrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 </style>
 </head>
@@ -146,8 +172,8 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 <section class="page" id="pg0" data-label="표지"><div class="inner"><div class="cover"><p class="eyebrow">교과별 AI 디지털 수업 실천과정 · 2차시</p>
 <h1>서·논술형 평가를<br><span class="nw">Gemini와</span> <span class="nw">클리포로</span> 만들고 채점하기</h1>
 <p class="lead"><span class="ln">클리포를 열기 전에, 어떤 평가를 할지 먼저 구상합니다.</span>
-<span class="ln">구상은 인천교육청 AIEP의 교육용 Gemini로 해 보고,</span>
-<span class="ln">그 결과를 들고 클리포에서 채점 기준을 만들고 채점해 봅니다.</span></p>
+<span class="ln">구상은 인천교육청 AIEP의 교육용 Gemini로 하고, 한글 파일로 완성합니다.</span>
+<span class="ln">그 완성본으로 클리포에서 수행평가 설계부터 채점, 세특까지 해 봅니다.</span></p>
 <p class="hint">오른쪽 화살표 키, 아래 버튼, 화면 좌우 밀기로 넘길 수 있습니다.</p></div>
 </div></section>
 <section class="page" id="pg1" data-label="오늘의 흐름"><div class="inner"><h2><span class="no">1</span>오늘의 흐름</h2>
@@ -155,12 +181,12 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 <div class="flow4">
 <div class="b h"><b class="k">① 구상</b><small>Gemini</small>어떤 평가를 할지 아이디어를 받고 고릅니다.</div>
 <div class="b a"><b class="k">② 문서화</b><small>Claude · 한글 파일</small>확정한 내용을 hwpx 파일로 만들어 저장합니다.</div>
-<div class="b a"><b class="k">③ 설계</b><small>클리포 · 평가설계</small>성취기준을 골라 채점 기준을 만듭니다.</div>
-<div class="b a"><b class="k">④ 채점</b><small>클리포 · 자동 채점</small>답안을 분석해 예상 점수와 근거를 받습니다.</div>
-<div class="b h"><b class="k">⑤ 피드백·기록</b><small>클리포 · 교사 확정</small>피드백과 세특 초안을 받아 고쳐 확정합니다.</div>
+<div class="b a"><b class="k">③ 설계</b><small>클리포 · 평가 설계</small>채점 기준을 등록하고 수행평가를 설계합니다.</div>
+<div class="b a"><b class="k">④ 채점</b><small>클리포 · AI 채점</small>답안을 올려 예상 점수와 근거를 받고 확정합니다.</div>
+<div class="b h"><b class="k">⑤ 피드백·기록</b><small>클리포 · 세특</small>세특 초안을 받아 다듬고 확정합니다.</div>
 </div>
-<div class="gold"><b>그래서 구상부터 합니다.</b><br>채점 기준을 만들려면 평가할 성취기준과 문항이 먼저 있어야 합니다.<br>구상은 사람이 방향을 잡고, AI에게는 후보를 받습니다.</div>
-<div class="note"><b>PART 1 · Gemini·Claude</b>에서 ①과 ②를, <b>PART 2 · 클리포로 확장하기</b>에서 ③~⑤를 다룹니다.</div>
+<div class="gold"><b>그래서 구상부터 합니다.</b><br>채점 기준을 등록하려면 평가할 문항과 기준표가 먼저 있어야 합니다.<br>구상은 사람이 방향을 잡고, AI에게는 후보를 받습니다.</div>
+<div class="note"><b>PART 1 · Gemini·Claude</b>에서 ①과 ②를, <b>PART 2 · 클리포로 확장하기</b>에서 ③~⑤를 다룹니다. 오늘 쓰는 예시는 고1 공통수학1의 이차방정식과 이차함수입니다.</div>
 </div></section>
 <section class="page pcover p1c" id="pg2" data-label="Gemini로 구상하기"><div class="inner"><div class="cover"><div class="pc-path"><div class="pc-chip on1">PART 1 · Gemini · Claude<small>구상하고 문서로 만들기</small></div><div class="pc-arrow">→</div><div class="pc-chip m2">PART 2 · 클리포<small>설계 · 채점 · 기록</small></div></div>
 <p class="eyebrow">PART 1</p>
@@ -206,26 +232,17 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 <tr><td>4</td><td><b>변수 설정 전략 비교</b></td><td>철망 텃밭의 최대 넓이, 벽 길이 제한이 붙을 때 다시 설계</td><td>[10공수1-02-06]</td></tr>
 <tr><td>5</td><td><b>오류 분석 논술</b></td><td>두 학생 대화에서 잘못된 부분을 찾아 고치기</td><td>[10공수1-02-04], [10공수1-02-05]</td></tr>
 </table>
-<p style="margin:14px 0 10px">대화의 끝에서 Gemini는, 하나를 고르면 학생용 평가지와 20점 만점 세부 채점 기준표로 완성해 주겠다고 제안했습니다.</p>
+<p style="margin:14px 0 10px">이 중 <b>5번 방향(오류 분석)</b>을 키운 것이 뒤에 나오는 완성본입니다. 대화의 끝에서 Gemini는, 하나를 고르면 학생용 평가지와 20점 만점 세부 채점 기준표로 완성해 주겠다고 제안했습니다.</p>
 <p><a class="btn" href="https://share.gemini.google/ow291KBi4a5L" target="_blank" rel="noopener">시연 대화 열어 보기 ↗</a></p>
 </div></section>
-<section class="page" id="pg7" data-label="문항 하나 읽기"><div class="inner"><h2><span class="no">5</span>문항 하나를 끝까지 읽어 보기</h2>
-<p class="sub">아이디어 2번, 「경우 나누기 최적화 논술」입니다.</p>
-<div class="card"><p><span class="tag o">문항(안)</span></p><p style="margin:0">0≤x≤2에서 이차함수 f(x)=x²−2ax+3의 최솟값이 1이 되도록 하는 모든 실수 a의 값을 구하려고 한다. 꼭짓점의 x좌표가 주어진 범위에 속할 때와 속하지 않을 때로 기준을 세워 가능한 모든 경우를 분류하고, 각 경우의 그래프 개형과 함께 풀이 과정을 논리적으로 서술하시오.</p></div>
-<div class="grid2">
-<div class="card"><p><span class="tag">채점 포인트</span></p><p style="margin:0">축의 위치 x=a에 따라 세 구간 a&lt;0, 0≤a≤2, a&gt;2로 누락과 중복 없이 나누었는지, 구간마다 구한 a가 그 구간의 조건을 만족하는지 확인했는지를 봅니다.</p></div>
-<div class="card"><p><span class="tag w">교사 검산</span></p><p style="margin:0">a&lt;0이면 최솟값이 f(0)=3이라 불가능합니다. 0≤a≤2이면 3−a²=1에서 a=√2입니다. a&gt;2이면 7−4a=1에서 a=3/2이 되어 범위 밖입니다. 답은 a=√2 하나입니다.</p></div>
-</div>
-<div class="note">세 구간 중 두 구간에서는 답이 나오지 않습니다. 그래서 <b>구간마다 검증했는지</b>가 이 문항의 논술 포인트가 됩니다.</div>
-</div></section>
-<section class="page" id="pg8" data-label="확인할 점"><div class="inner"><h2><span class="no">6</span>교사가 확인할 네 가지</h2>
+<section class="page" id="pg7" data-label="확인할 점"><div class="inner"><h2><span class="no">5</span>교사가 확인할 네 가지</h2>
 <p class="sub">1차시와 마찬가지로, AI의 초안은 사람이 읽고 걸러야 합니다. 이 시연 결과에서 찾은 점검 예입니다.</p>
 <div class="card"><p><span class="tag w">1</span><b>조건이 충분한가</b></p><p style="margin:0">3번 문항은 최고 높이 25m만 주어지고, 그 높이가 되는 위치나 낙하 지점이 없습니다. 이 조건만으로는 포물선이 하나로 정해지지 않습니다.</p></div>
 <div class="card"><p><span class="tag w">2</span><b>장면이 자연스러운가</b></p><p style="margin:0">같은 문항에서 담장 위쪽에서 쏘아 올린 직선 레이저와 타구가 만나는지를 묻는 설정은 억지스럽습니다. 학생이 장면에 막히지 않게 고칩니다.</p></div>
 <div class="card"><p><span class="tag w">3</span><b>답이 나오는가</b></p><p style="margin:0">문항을 고르면 교사가 직접 한 번 풉니다. 앞 장처럼 검산해 보면 채점 포인트도 선명해집니다.</p></div>
 <div class="card"><p><span class="tag w">4</span><b>지도서·평가계획서와 맞는가</b></p><p style="margin:0">성취기준 코드, 교과서 쪽수, 배점이 실제 자료와 같은지 대조합니다. AI가 쪽수를 틀리게 적을 수 있습니다.</p></div>
 </div></section>
-<section class="page" id="pg9" data-label="Claude로 한글 파일"><div class="inner"><h2><span class="no">7</span>확정한 구상을 한글(hwpx) 파일로: Claude</h2>
+<section class="page" id="pg8" data-label="Claude로 한글 파일"><div class="inner"><h2><span class="no">6</span>확정한 구상을 한글(hwpx) 파일로: Claude</h2>
 <p class="sub">Gemini에서 문항과 채점 기준을 다듬어 확정한 뒤, 문서 파일로 저장하는 일은 Claude가 맡았습니다.</p>
 <div class="prompt">
 <div class="ph"><span class="n">2</span><b>hwpx 파일로 만들기</b><button class="copy" data-t="p2">복사</button></div>
@@ -240,21 +257,63 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 <p style="margin:4px 0 10px"><a class="btn" href="https://claude.ai/share/bda8f6cd-6e7c-4220-8b51-09bbabd51b02" target="_blank" rel="noopener">Claude 대화 열어 보기 ↗</a></p>
 <p class="cap">공유된 대화에는 올린 자료가 숨겨져 있어서 프롬프트와 Claude의 답이 보입니다.</p>
 </div></section>
-<section class="page" id="pg10" data-label="받은 파일 확인"><div class="inner"><h2><span class="no">8</span>받은 한글 파일에서 확인할 세 가지</h2>
+<section class="page" id="pg9" data-label="받은 파일 확인"><div class="inner"><h2><span class="no">7</span>받은 한글 파일에서 확인할 세 가지</h2>
 <p class="sub">Claude가 파일과 함께 직접 알려 준 점입니다. 이번에도 마지막 확인은 사람이 합니다.</p>
 <div class="card"><p><span class="tag w">1</span><b>한글에서 열어 보기</b></p><p style="margin:0">이 환경에는 한글 프로그램이 없어서 열리는지는 확인하지 못하고, 파일 구조와 문법 검사만 통과한 상태라고 했습니다. 열리지 않거나 수식과 표 크기가 어색하면 Claude에게 그대로 알려 고치게 합니다.</p></div>
 <div class="card"><p><span class="tag w">2</span><b>모범 답안은 누구의 것인가</b></p><p style="margin:0">자료에 모범 답안이 없어서 Claude가 채점 기준표와 학생 답안을 바탕으로 썼다고 했습니다. 반례(x=2)와 교점((2, 4)) 같은 값도 Claude가 잡은 것입니다. 교사의 모범 답안으로 바꾸거나 직접 풀어 확인합니다.</p></div>
 <div class="card"><p><span class="tag w">3</span><b>배점이 맞는가</b></p><p style="margin:0">기준안의 "서·논술 18점 + 관찰 2점"과 채점 기준표의 6+6+6+2점이 맞지 않고 기본점수 10점의 위치도 분명하지 않아, Claude가 원문 그대로 두었다고 했습니다. 이런 모순은 교사가 정리해야 합니다.</p></div>
 <div class="note">Claude는 파일을 만든 <b>스크립트</b>도 함께 주었습니다. 내용을 고친 뒤 다시 실행하면 파일이 새로 만들어집니다.</div>
 </div></section>
-<section class="page pcover" id="pg11" data-label="클리포로 확장하기" data-part="clipo"><div class="inner"><div class="cover"><div class="pc-path"><div class="pc-chip p1">PART 1 · Gemini · Claude<small>구상하고 문서로 만들기</small></div><div class="pc-arrow">→</div><div class="pc-chip on">PART 2 · 클리포<small>설계 · 채점 · 기록</small></div></div>
+<section class="page" id="pg10" data-label="완성본 · 평가지"><div class="inner"><h2><span class="no">8</span>완성본 ①: 학생 평가지</h2>
+<p class="sub">Gemini 구상 5번 「오류 분석 논술」이 한글 파일로 완성되었습니다. 제시문은 세 학생의 대화입니다.</p>
+<table>
+<tr><th style="width:64px">학생</th><th>말한 내용 (요약)</th></tr>
+<tr><td><b>민준</b></td><td><span class="math">x²−2x+4=0</span>은 판별식이 <span class="math">D=−12&lt;0</span>이니 <b>근이 아예 없고</b>, 그래프도 x축과 만나지 않는다.</td></tr>
+<tr><td><b>서연</b></td><td>판별식은 만능이다. <span class="math">x²−(3−2i)x+(1−3i)=0</span>도 <span class="math">D=1&gt;0</span>이니 서로 다른 두 실근을 갖는다.</td></tr>
+<tr><td><b>도윤</b></td><td>직선이 포물선과 한 점에서만 만나면 반드시 접하고, 연립한 방정식의 판별식은 항상 <span class="math">D=0</span>이다.</td></tr>
+</table>
+<div class="grid2">
+<div class="card"><span class="tag o">문항 1</span><p style="margin:8px 0 0">민준의 옳은 부분과 잘못된 부분을 찾아, 수의 범위 확장과 좌표평면의 성질로 고칩니다. <span class="math">x²−2x+4=0</span>의 근을 직접 구해 근거로 씁니다.</p></div>
+<div class="card"><span class="tag o">문항 2</span><p style="margin:8px 0 0">서연의 주장이 틀렸음을 해를 직접 구해 반박하고, 판별식으로 실근과 허근을 가르려면 필요한 전제 조건을 씁니다.</p></div>
+</div>
+<div class="card"><span class="tag o">문항 3</span><p style="margin:8px 0 0">도윤의 주장에 대한 반례 직선을 하나 정하고, 연립방정식 풀이와 격자 위 그래프(개형·교점)로 설명합니다.</p></div>
+</div></section>
+<section class="page" id="pg11" data-label="완성본 · 채점 기준"><div class="inner"><h2><span class="no">9</span>완성본 ②: 채점 기준표 (20점)</h2>
+<p class="sub">문항 1~3이 요소 1~3과 하나씩 대응합니다. 클리포에 등록할 표가 바로 이것입니다.</p>
+<table>
+<tr><th style="width:24%">평가 요소</th><th>만점 기준</th><th style="width:26%">단계</th></tr>
+<tr><td><b>1 개념 오류 분석과 수 체계 연결</b> (6점)</td><td>옳은 부분과 잘못된 부분을 구분하고, 두 허근을 구해 복소수 근의 존재와 좌표평면의 관계를 오류 없이 서술</td><td>6 · 5 · 4 · 3점</td></tr>
+<tr><td><b>2 판별식 적용 조건의 논리적 검증</b> (6점)</td><td>두 허근을 정확히 구해 반박하고, 판별식은 <b>계수가 모두 실수일 때만</b> 성립함을 서술</td><td>6 · 5 · 4 · 3점</td></tr>
+<tr><td><b>3 기하적 반례와 시각적 표현</b> (6점)</td><td>y축에 평행한 직선 <span class="math">x=k</span>를 반례로 정하고, 이차방정식이 나오지 않아 <span class="math">D</span>를 쓸 수 없음과 접하지 않는 이유를 설명</td><td>6 · 5 · 4 · 3점</td></tr>
+<tr><td><b>4 탐구 태도와 참여</b> (2점)</td><td>능동적이고 성실하게 참여</td><td>2 · 1점</td></tr>
+</table>
+<div class="warn"><b>배점 표기가 어긋나 있습니다.</b> 기준안 윗부분은 "서술 18점 + 관찰 2점, 기본점수 10점"이고, 표는 6+6+6+2=20점입니다. 클리포에 올리기 전에 교사가 하나로 정리합니다.</div>
+</div></section>
+<section class="page" id="pg12" data-label="완성본 · 가상 답안"><div class="inner"><h2><span class="no">10</span>완성본 ③: 가상 학생 답안 10선</h2>
+<p class="sub">채점 연습용으로 같이 만들어 둔 답안입니다. 괄호의 점수는 한글 파일에 적힌 점수입니다.</p>
+<table>
+<tr><th style="width:64px">학생</th><th style="width:60px">점수</th><th>답안의 특징</th></tr>
+<tr><td>1</td><td>20</td><td>세 문항 모두 근을 직접 구하고, 반례 <span class="math">x=2</span>와 이차방정식이 안 나오는 이유까지 서술</td></tr>
+<tr><td>2</td><td>18</td><td>문항 3에서 세로선(<span class="math">x=k</span> 꼴)으로 설명</td></tr>
+<tr><td>3</td><td>16</td><td>반례 직선을 구체적으로 적지 않음</td></tr>
+<tr><td>4</td><td>14</td><td>문항 2에서 실수 계수 조건 누락, 문항 3은 "예외가 있다" 수준</td></tr>
+<tr><td>5</td><td>13</td><td>문항 2에서 근을 직접 구하지 않음</td></tr>
+<tr><td>6</td><td>11</td><td>"<span class="math">D=1</span>이니 실근 2개, 서연이 맞다" 등 오개념</td></tr>
+<tr><td>7</td><td>9</td><td>"인수분해가 안 되니 해가 없다", "1점이면 무조건 접한다"</td></tr>
+<tr><td>8</td><td>6</td><td>허수와 판별식에 대한 오개념, "한 점에서 만날 수 없다"</td></tr>
+<tr><td>9</td><td>4</td><td>공식과 정의만 적고 문제에 적용하지 못함</td></tr>
+<tr><td>10</td><td>2</td><td>단답 또는 "모름"</td></tr>
+</table>
+<div class="note">뒤에서 클리포의 AI 채점 결과를 이 점수와 <b>견주어 봅니다.</b></div>
+</div></section>
+<section class="page pcover" id="pg13" data-label="클리포로 확장하기" data-part="clipo"><div class="inner"><div class="cover"><div class="pc-path"><div class="pc-chip p1">PART 1 · Gemini · Claude<small>구상하고 문서로 만들기</small></div><div class="pc-arrow">→</div><div class="pc-chip on">PART 2 · 클리포<small>설계 · 채점 · 기록</small></div></div>
 <p class="eyebrow">PART 2</p>
 <h1>클리포로 확장하기</h1>
 <p class="lead"><span class="ln">Gemini로 구상하고 Claude로 문서까지 만들었습니다.</span>
 <span class="ln">이제 그 평가를 클리포로 가져가 채점 기준을 만들고 채점합니다.</span></p></div>
 <div class="pc-big">2</div>
 </div></section>
-<section class="page" id="pg12" data-label="클리포란" data-part="clipo"><div class="inner"><h2><span class="no">9</span>클리포는 어떤 도구인가</h2>
+<section class="page" id="pg14" data-label="클리포란" data-part="clipo"><div class="inner"><h2><span class="no">11</span>클리포는 어떤 도구인가</h2>
 <p class="sub">구상한 평가를 채점하고 기록하는 데까지 이어 주는 교사용 AI 서비스입니다.</p>
 <div class="card urlrow"><span class="tag">주소</span><code class="url" style="font-size:.95em">https://clipo.ai/</code><a class="btn" href="https://clipo.ai/" target="_blank" rel="noopener" style="margin-left:auto">클리포 열기 ↗</a></div>
 <div class="grid2">
@@ -265,17 +324,7 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 </div>
 <p class="cap">참고: 전 과목 수행평가를 종합한 리포트 기능도 있지만 학교 단위로 도입할 때만 쓸 수 있습니다. 소개 페이지 <a href="https://clipo.ai/" target="_blank" rel="noopener">clipo.ai</a> 기준입니다.</p>
 </div></section>
-<section class="page" id="pg13" data-label="클리포 흐름" data-part="clipo"><div class="inner"><h2><span class="no">10</span>클리포의 한 학기 흐름</h2>
-<p class="sub">클리포는 평가의 세 시기에 걸쳐 쓰도록 소개되어 있습니다.</p>
-<table>
-<tr><th style="width:110px">시기</th><th>하는 일</th><th style="width:34%">오늘 연결되는 곳</th></tr>
-<tr><td><b>학기 초</b></td><td>과목의 성취기준을 고르면 AI가 채점 기준을 만듭니다.</td><td>구상한 성취기준과 문항으로 시작</td></tr>
-<tr><td><b>학기 중</b></td><td>답안을 자동으로 채점하고 피드백 메시지를 만듭니다.</td><td>예상 점수와 근거를 교사가 확인</td></tr>
-<tr><td><b>학기 말</b></td><td>세특·행특 초안을 쓰고 수행평가 결과를 종합합니다.</td><td>초안을 교사가 고쳐 확정</td></tr>
-</table>
-<div class="note">AI가 내는 점수는 <b>예상 점수</b>입니다. 최종 점수와 기록은 교사가 확정합니다. 1차시의 H-A-H와 같은 순서입니다.</div>
-</div></section>
-<section class="page" id="pg14" data-label="시작 전에" data-part="clipo"><div class="inner"><h2><span class="no">11</span>시작 전에 알아둘 것</h2>
+<section class="page" id="pg15" data-label="시작 전에" data-part="clipo"><div class="inner"><h2><span class="no">12</span>시작 전에 알아둘 것</h2>
 <div class="grid2">
 <div class="card"><b>무료 체험</b><p style="margin:8px 0 0">6개월 무료 체험이 있고, 신용카드 등록 없이 시작할 수 있다고 안내되어 있습니다.</p></div>
 <div class="card"><b>AI 크레딧</b><p style="margin:8px 0 0">AI 기능을 한 번 실행할 때 학생 한 명당 크레딧 1개가 쓰입니다. 데일리 크레딧은 매일 자정에 다시 채워집니다.</p></div>
@@ -284,15 +333,184 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 <div class="warn"><b>학생 정보는 필요한 만큼만.</b> 답안에 이름이나 학번이 함께 들어 있다면, 채점에 필요한 만큼만 넣고 그 밖의 개인정보는 가립니다.</div>
 <p class="cap">이용 조건은 소개 페이지 안내 기준이며 바뀔 수 있습니다.</p>
 </div></section>
-<section class="page" id="pg15" data-label="실습" data-part="clipo"><div class="inner"><h2><span class="no">12</span>내 구상으로 클리포 채점 기준 만들기</h2>
-<p class="sub">구상에서 고른 문항 하나를 들고 클리포로 넘어갑니다.</p>
+<section class="page" id="pg16" data-label="실습 순서" data-part="clipo"><div class="inner"><h2><span class="no">13</span>클리포 실습 순서</h2>
+<p class="sub">완성본 한글 파일 하나를 들고, 클리포에서 아래 순서로 끝까지 갑니다.</p>
+<table>
+<tr><th style="width:44px">№</th><th style="width:28%">하는 일</th><th>클리포에서 누르는 곳</th></tr>
+<tr><td>1</td><td><b>채점 기준 등록</b></td><td>평가 계획 → 루브릭 이미지 업로드 → 채점 기준 AI 생성</td></tr>
+<tr><td>2</td><td><b>수업 만들기</b></td><td>수업 → + 수업 만들기 → 참여학생 관리</td></tr>
+<tr><td>3</td><td><b>수행평가 설계</b></td><td>수행평가 설계 → 평가계획에서 가져오기</td></tr>
+<tr><td>4</td><td><b>답안 올리기</b></td><td>과제물 관리 → 학급 일괄 업로드 → PDF 분할 업로드</td></tr>
+<tr><td>5</td><td><b>AI 채점과 검수</b></td><td>수행평가 채점 → AI 채점 실행 → AI 점수 적용</td></tr>
+<tr><td>6</td><td><b>마감</b></td><td>수행평가 목록 첫 화면 → 마감</td></tr>
+<tr><td>7</td><td><b>세특 만들기</b></td><td>세부능력 및 특기사항 지원 → 세특 AI 기록 생성</td></tr>
+</table>
+<div class="gold"><b>길목이 두 곳 있습니다.</b><br>1번에서는 캡처 범위, 6번에서는 마감을 놓치면 뒤가 막힙니다.</div>
+</div></section>
+<section class="page" id="pg17" data-label="채점 기준 등록" data-part="clipo"><div class="inner"><h2><span class="no">14</span>채점 기준을 그림으로 등록하기</h2>
+<p class="sub">한글 파일에 있는 채점 기준표를 클리포가 읽어 오게 합니다.</p>
 <div class="card"><ol class="steps">
-<li><b>가져갈 것 챙기기.</b> 고른 문항(안), 성취기준 코드, Gemini가 준 채점 포인트를 한곳에 모읍니다.</li>
-<li><b>성취기준 고르기.</b> 클리포의 평가설계에서 해당 성취기준을 선택해 채점 기준을 만듭니다.</li>
-<li><b>나란히 놓고 비교하기.</b> Gemini의 채점 포인트와 클리포의 채점 기준에서 겹치는 것, 다른 것을 찾습니다.</li>
-<li><b>고쳐서 확정하기.</b> 내 평가에 맞게 문구와 배점을 고칩니다. 확정은 교사가 합니다.</li>
+<li><b>캡처.</b> 한글 파일에서 <b>채점 기준표만</b> 딱 맞게 캡처합니다.</li>
+<li><b>저장.</b> 오른쪽 버튼 → 그림으로 저장하고, 바탕화면에 <code>평가계획.png</code>로 둡니다.</li>
+<li><b>업로드.</b> 클리포 왼쪽 메뉴 <b>평가 계획</b> → <b>루브릭 이미지 업로드</b>에서 파일을 엽니다.</li>
+<li><b>AI 생성.</b> <b>채점 기준 AI 생성</b>을 누르면 채점 요소와 배점이 읽혀 옵니다.</li>
+<li><b>적용과 저장.</b> 훑어본 뒤 <b>채점 기준 적용하기</b> → <b>평가 계획 저장</b>.</li>
 </ol></div>
-<div class="gold">두 AI의 결과가 다른 곳에서 <b>왜 다른지</b> 따져 보는 것이 이 활동의 핵심입니다.</div>
+<div class="warn"><b>성취기준 부분까지 캡처하지 않습니다.</b> 연수 시연에서 크게 캡처했더니 성취기준 글까지 채점 기준으로 읽혀 오류가 났습니다. 우리 파일에서는 윗부분 개요 표를 빼고 <b>20점 채점 기준표</b>만 잡습니다.</div>
+<div class="note"><b>읽혀 온 결과 확인.</b> 요소가 네 개인지, 배점이 6·6·6·2인지, 단계별 문구가 원본과 같은지 대조합니다.</div>
+</div></section>
+<section class="page" id="pg18" data-label="수업 만들기" data-part="clipo"><div class="inner"><h2><span class="no">15</span>수업 만들고 학생 넣기</h2>
+<p class="sub">평가를 담을 수업(반)을 먼저 만듭니다.</p>
+<div class="grid2" style="align-items:start">
+<div class="card"><ol class="steps">
+<li><b>수업 만들기.</b> 왼쪽 메뉴 <b>수업</b> → 오른쪽 <b>+ 수업 만들기</b>.</li>
+<li><b>기본 정보.</b> 2026학년도 1학기, 2022 개정 교육과정, 수학 / 공통수학1.</li>
+<li><b>반 편성.</b> 오른쪽 표에서 고릅니다.</li>
+<li><b>학생 넣기.</b> 저장한 뒤 <b>참여학생 관리</b> → <b>참여학생 추가/제외</b>에서 명단을 오른쪽으로 옮겨 저장합니다.</li>
+</ol></div>
+<div class="card"><p><span class="tag">반 편성</span></p>
+<p style="margin:8px 0"><b>학적 기준반.</b><br>일반 학급 단위입니다. 오늘은 이것으로 만듭니다.</p>
+<p style="margin:0"><b>이동수업반.</b><br>수준별·이동수업을 하는 경우에 고릅니다.</p></div>
+</div>
+<div class="note">수업을 저장하면 위쪽에 탭이 나타납니다. 탭을 <b>왼쪽부터 순서대로</b> 밟아 갑니다.</div>
+</div></section>
+<section class="page" id="pg19" data-label="수행평가 설계" data-part="clipo"><div class="inner"><h2><span class="no">16</span>수행평가 설계: 평가 계획 가져오기</h2>
+<p class="sub">앞에서 저장한 평가 계획을 불러오면 대부분 자동으로 채워집니다.</p>
+<div class="card"><ol class="steps">
+<li><b>탭 이동.</b> <b>수행평가 설계</b> → <b>수행평가 만들기</b>를 누르면 방법이 세 가지 나옵니다.</li>
+<li><b>가져오기.</b> <b>평가계획에서 가져오기</b>를 고르고 방금 저장한 평가 계획을 적용합니다.</li>
+<li><b>자동으로 들어온 것 확인.</b> 성취기준 <code>[10공수1-02-04]</code>, <code>[10공수1-02-05]</code>와 채점 기준, 만점과 최저점.</li>
+<li><b>직접 입력.</b> 수행평가 과제명, 그리고 미제출·미응시자 기본 점수.</li>
+<li><b>과제물 방식 고르기</b> 후 <b>설계 저장</b>.</li>
+</ol></div>
+<div class="grid3">
+<div class="card" style="border-color:var(--teal)"><span class="tag">오늘 선택</span><p style="margin:8px 0 0"><b>교사가 직접 일괄 업로드.</b><br>종이 답안을 스캔해 한 번에 올립니다. 수학에서 가장 많이 씁니다.</p></div>
+<div class="card"><p style="margin:0"><b>학생 작성 또는 업로드.</b><br>학생 계정으로 태블릿이나 폰으로 찍어 올립니다.</p></div>
+<div class="card"><p style="margin:0"><b>과제물 없이 바로 채점.</b><br>실기·실습처럼 결과물 파일이 없을 때 씁니다.</p></div>
+</div>
+<div class="note">미제출·미응시 기본 점수는 교과 협의로 정한 값을 넣습니다. 앞 장의 "기본점수 10점" 표기와 같은지도 이때 확인합니다.</div>
+</div></section>
+<section class="page" id="pg20" data-label="답안 올리기" data-part="clipo"><div class="inner"><h2><span class="no">17</span>수기 답안 스캔본을 한 번에 올리기</h2>
+<p class="sub">학생 이름과 파일명을 맞출 필요가 없는 <b>PDF 분할 업로드</b>를 씁니다.</p>
+<div class="card"><ol class="steps">
+<li><b>경로.</b> 세 번째 탭 <b>과제물 관리</b> → 해당 반 <b>과제 제출 현황</b> → 위쪽 <b>학급 일괄 업로드</b>.</li>
+<li><b>PDF 분할 업로드</b>를 고르고 학생 답안 스캔본 PDF를 올립니다.</li>
+<li><b>파일 시작 페이지.</b> 맨 앞에 표지나 안내문이 한 장 끼어 있으면 2, 아니면 1.</li>
+<li><b>학생 1명당 기본 장수.</b> 평가지가 한 장짜리면 1.</li>
+<li><b>분할 결과 미리보기</b>로 학생 이름과 답안이 맞게 짝지어졌는지 보고 <b>파일 업로드</b>.</li>
+</ol></div>
+<div class="grid2">
+<div class="card"><span class="tag o">팁 1</span><p style="margin:8px 0 0">풀이가 길어 두 장을 쓴 학생은 그 학생의 장수만 <b>2</b>로 고칩니다. 뒤 학생들이 자동으로 한 칸씩 밀립니다.</p></div>
+<div class="card"><span class="tag o">팁 2</span><p style="margin:8px 0 0">시험지를 내지 않은 학생은 <b>미제출</b>을 체크합니다. 그 번호를 건너뛰고 다음 학생 답안을 맞게 연결합니다.</p></div>
+</div>
+</div></section>
+<section class="page" id="pg21" data-label="AI 채점" data-part="clipo"><div class="inner"><h2><span class="no">18</span>AI 채점 실행과 색으로 읽기</h2>
+<p class="sub">네 번째 탭 <b>수행평가 채점</b>에서 <b>AI 채점 실행</b>을 누릅니다.</p>
+<div class="card"><p style="margin:0">채점이 끝나면 상태가 <b>확인 필요</b>로 뜹니다. 학생의 <b>상세 보기</b>에 들어가면 <b>왼쪽에 답안, 오른쪽에 AI 점수와 채점 근거</b>가 나옵니다.</p></div>
+<div class="grid3">
+<div class="card" style="background:#e3eefb;border-color:#b6d0f2"><b>연한 파란색</b><p style="margin:8px 0 0">AI가 가채점을 마친 상태입니다. 교사의 최종 확인을 기다립니다.</p></div>
+<div class="card" style="background:#1e3a8a;border-color:#1e3a8a;color:#fff"><b>진한 파란색</b><p style="margin:8px 0 0">교사가 검수하고 점수를 확정한 상태입니다.</p></div>
+<div class="card" style="background:#f1efe9"><b>회색 · 빨간색</b><p style="margin:8px 0 0">채점 기준과 연관성이 낮거나 백지·오답일 가능성이 큽니다. 교사가 꼭 눈으로 확인합니다.</p></div>
+</div>
+<div class="note">우리 평가에서는 <b>문항 2의 "실수 계수" 조건</b>과 <b>문항 3의 반례 직선</b>을 AI가 어떻게 읽는지 눈여겨봅니다.</div>
+</div></section>
+<section class="page" id="pg22" data-label="검수와 확정" data-part="clipo"><div class="inner"><h2><span class="no">19</span>교사 검수와 일괄 확정</h2>
+<p class="sub">AI의 점수는 가채점입니다. 확정은 교사가 합니다.</p>
+<div class="grid2" style="align-items:start">
+<div class="card"><p><span class="tag">한 명씩</span></p><ol class="steps">
+<li>답안과 근거를 읽고 맞으면 <b>AI 점수 적용</b>. 진한 파란색으로 바뀝니다.</li>
+<li>다르면 점수를 직접 눌러 고칩니다.</li>
+<li><b>저장 후 다음</b>으로 다음 학생에게 갑니다.</li>
+</ol></div>
+<div class="card"><p><span class="tag">여러 명 한꺼번에</span></p><ol class="steps">
+<li>위쪽 도구 줄의 <b>빨간 도장 아이콘</b>(일괄 적용)을 누릅니다.</li>
+<li>AI 결과가 타당한 학생들을 체크합니다.</li>
+<li><b>선택한 학생 점수 적용</b>을 누르면 한 번에 확정됩니다.</li>
+</ol></div>
+</div>
+<div class="gold"><b>견주어 보기.</b><br>학생 1, 4, 6, 10의 AI 점수를 앞에서 본 한글 파일의 점수(20, 14, 11, 2)와 놓고 봅니다.<br>차이가 크면 어느 요소에서 갈렸는지 채점 근거에서 찾습니다.</div>
+<div class="note">같아야 맞는 것이 아닙니다. 그 점수는 연습용으로 정한 값이고, 채점 기준과 어긋난 곳이 AI인지 기준표인지를 따져 보는 자리입니다.</div>
+</div></section>
+<section class="page" id="pg23" data-label="마감" data-part="clipo"><div class="inner"><h2><span class="no">20</span>마감을 눌러야 다음으로 갑니다</h2>
+<p class="sub">가장 많이 놓치는 단계입니다.</p>
+<div class="warn" style="font-size:1.05em"><b>마감을 누르지 않으면 세특 생성 메뉴에 이 수행평가가 나타나지 않습니다.</b></div>
+<div class="card"><ol class="steps">
+<li>모든 학생의 채점이 <b>채점 완료</b>인지 확인합니다.</li>
+<li>위쪽 <b>수행평가 채점</b>을 다시 눌러 수행평가 <b>목록 첫 화면</b>으로 나옵니다.</li>
+<li>오른쪽 끝의 <b>마감</b>을 누릅니다. 버튼이 <b>마감 취소</b>로 바뀌면 됩니다.</li>
+</ol></div>
+<div class="note">나이스에서 성적을 처리한 뒤 마감하는 것과 같은 순서라고 생각하면 됩니다.</div>
+</div></section>
+<section class="page" id="pg24" data-label="세특 만들기" data-part="clipo"><div class="inner"><h2><span class="no">21</span>수행평가로 교과 세특 초안 만들기</h2>
+<p class="sub">위쪽 메뉴 <b>세부능력 및 특기사항 지원</b> → <b>세특 AI 기록 생성</b>.</p>
+<div class="card"><ol class="steps">
+<li><b>대상 고르기.</b> 방금 마감한 수행평가를 체크하고 학생을 선택합니다.</li>
+<li><b>생성 분량.</b> 고등학교는 500바이트 내외가 넉넉합니다.</li>
+<li><b>고급 설정.</b> 아래 두 가지를 확인합니다.</li>
+<li><b>AI 기록 생성</b>을 누르면 학생별 수기 풀이를 근거로 초안이 나옵니다.</li>
+<li>마음에 들면 가운데 <b>가져오기</b>로 오른쪽 교사 편집창에 옮깁니다.</li>
+</ol></div>
+<div class="grid2">
+<div class="card"><span class="tag o">수행 수준 고려 · 켬</span><p style="margin:8px 0 0">상 수준 학생은 심화 개념까지, 하 수준 학생은 기본 개념 이해 중심으로 차이를 둡니다.</p></div>
+<div class="card"><span class="tag w">부정적 표현 허용 · 끔</span><p style="margin:8px 0 0">생활기록부 기재 요령에 맞춰 끈 채로 둡니다.</p></div>
+</div>
+<div class="note"><b>가져오기</b>를 눌러야 저장됩니다. 나중에 학생이나 학부모 문의가 오면 <b>기록 근거</b> 버튼으로 어떤 채점 결과에서 나온 문장인지 확인할 수 있습니다.</div>
+</div></section>
+<section class="page" id="pg25" data-label="기록 다듬기" data-part="clipo"><div class="inner"><h2><span class="no">22</span>AI 기록 다듬기: 다섯 가지 목적</h2>
+<p class="sub">초안 아래의 <b>AI 기록 다듬기</b>에 말로 지시하면 문장이 다시 나옵니다.</p>
+<table>
+<tr><th style="width:40px">№</th><th style="width:30%">목적</th><th>이 수행평가에 붙이면</th></tr>
+<tr><td>1</td><td><b>분량 줄이기</b></td><td>바이트 수를 맞추도록 핵심만 남깁니다.</td></tr>
+<tr><td>2</td><td><b>채점 근거 구체화</b></td><td>판별식의 적용 조건, 허근의 의미, 반례 직선 같은 근거를 더합니다.</td></tr>
+<tr><td>3</td><td><b>문체 통일</b></td><td>학급 전체를 "~함.", "~보임." 같은 명사형 종결로 맞춥니다.</td></tr>
+<tr><td>4</td><td><b>성장 흐름 강조</b></td><td>오답에서 정답으로 나아간 과정을 드러냅니다.</td></tr>
+<tr><td>5</td><td><b>교과 역량 연계</b></td><td>2022 개정 수학 교과 역량(문제해결, 추론, 연결 등)과 이어 줍니다.</td></tr>
+</table>
+<div class="prompt" style="margin-top:14px">
+<div class="ph"><span class="n">3</span><b>다듬기 지시 예시 <span class="tag">예시 · 직접 다듬어 쓰기</span></b><button class="copy" data-t="p3">복사</button></div>
+<pre id="p3">위 세특을 다음 조건으로 다듬어 줘.
+- 분량은 500바이트 안으로 줄여 줘.
+- 이차방정식의 허근과 판별식의 적용 조건을 구체적으로 짚어 줘.
+- 문장은 '~함.', '~보임.' 으로 끝내 줘.
+- 처음 오개념에서 바른 풀이로 나아간 흐름이 보이게 해 줘.
+- 문제해결, 추론 역량과 연결해 줘.</pre>
+<div class="why"><div><span class="tag w">확인</span>다섯 가지를 한꺼번에 시켜도 되고, 하나씩 시켜도 됩니다. 연수 자료의 프롬프트 모음이 있다면 그것을 우선합니다.</div></div>
+</div>
+</div></section>
+<section class="page" id="pg26" data-label="간편 생성기" data-part="clipo"><div class="inner"><h2><span class="no">23</span>더 알아 둘 기능과 나이스로 옮기기</h2>
+<div class="grid2">
+<div class="card"><p><span class="tag o">⚡ 세특 간편 생성기</span></p><p style="margin:0">왼쪽 메뉴의 번개 아이콘입니다. 답안 스캔본이 없는 단원이나 발표·탐구 활동만 기록할 때 씁니다.<br>과목과 성취기준을 고르고, 학생의 수준(상·중·하)과 키워드를 누르면 초안이 나옵니다.</p></div>
+<div class="card"><p><span class="tag o">행동특성 및 종합의견</span></p><p style="margin:0">왼쪽 사람 얼굴 아이콘입니다. 담임 교사가 학생별 인성·학습 역량 키워드를 눌러 행특 초안을 한꺼번에 만듭니다.</p></div>
+</div>
+<div class="card"><p><span class="tag">나이스로 옮기기</span></p><p style="margin:0">모든 기록이 끝나면 <b>엑셀로 내려받아</b> 나이스에 일괄 올립니다.<br>엑셀에서 글자가 잘려 보이면 열을 선택해 오른쪽 버튼 → <b>셀 서식</b> → <b>텍스트 줄 바꿈</b>을 체크합니다.</p></div>
+<div class="warn"><b>올리기 전에 한 번 더.</b> 학생 이름이 맞는지, 점수나 사교육 관련 표현이 들어가지 않았는지는 교사가 읽고 확인합니다.</div>
+</div></section>
+<section class="page" id="pg27" data-label="활동지 설계" data-part="clipo"><div class="inner"><h2><span class="no">24</span>다음 수업에 쓰는 활동지 설계 틀</h2>
+<p class="sub">AI 채점이 정확해지려면 <b>문항 하나가 채점 요소 하나</b>와 짝이 되어야 합니다.</p>
+<table>
+<tr><th style="width:20%">문항</th><th>학생이 하는 일</th><th style="width:26%">짝이 되는 요소</th></tr>
+<tr><td><b>문항 1</b></td><td>제시된 주장에서 맞고 틀린 부분을 가려 개념으로 고칩니다.</td><td>요소 1 개념 오류 분석</td></tr>
+<tr><td><b>문항 2</b></td><td>또 다른 주장을 계산으로 직접 반박하고 조건을 밝힙니다.</td><td>요소 2 적용 조건 검증</td></tr>
+<tr><td><b>문항 3</b></td><td>반례를 직접 만들어 식과 그래프로 설명합니다.</td><td>요소 3 반례와 시각 표현</td></tr>
+</table>
+<div class="gold"><b>수식만 있는 문제와 다른 점.</b><br>"해를 구하시오"보다 <b>사고의 단계</b>가 채점 기준에 그대로 나타납니다.<br>그래서 세특에 쓸 근거도 풍부해집니다.</div>
+<div class="prompt" style="margin-top:14px">
+<div class="ph"><span class="n">4</span><b>Gemini에게 활동지 틀 요청하기 <span class="tag">예시</span></b><button class="copy" data-t="p4">복사</button></div>
+<pre id="p4">2022 개정 교육과정 <span class="slot">[교과·과목]</span> <span class="slot">[성취기준]</span>을 바탕으로, 학생들의 잘못된 주장 세 개를 제시문으로 주고 하나씩 바로잡게 하는 서·논술형 활동지를 만들어 줘.
+문항 하나가 채점 요소 하나와 짝이 되게 하고, 요소별 6점·5점·4점·3점 단계의 채점 기준표도 같이 만들어 줘.</pre>
+</div>
+</div></section>
+<section class="page" id="pg28" data-label="마무리" data-part="clipo"><div class="inner"><h2><span class="no">25</span>오늘 흐름 되짚기</h2>
+<p class="sub">처음부터 끝까지, 사람이 확인하는 자리가 어디인지 다시 봅니다.</p>
+<table>
+<tr><th style="width:24%">단계</th><th>AI가 한 일</th><th style="width:34%">교사가 확인한 것</th></tr>
+<tr><td><b>구상</b> · Gemini</td><td>평가 아이디어 5개, 문항(안)</td><td>조건이 충분한지, 답이 나오는지</td></tr>
+<tr><td><b>문서화</b> · Claude</td><td>한글 파일, 모범 답안</td><td>배점 표기, 모범 답안, 한글에서 열림</td></tr>
+<tr><td><b>설계</b> · 클리포</td><td>채점 기준 읽기</td><td>캡처 범위, 요소와 배점</td></tr>
+<tr><td><b>채점</b> · 클리포</td><td>예상 점수와 근거</td><td>점수 적용, 마감</td></tr>
+<tr><td><b>기록</b> · 클리포</td><td>세특 초안, 다듬기</td><td>가져오기, 문장, 바이트</td></tr>
+</table>
+<div class="warn"><b>꼭 기억할 네 가지.</b><br>채점 기준표만 캡처합니다. 채점이 끝나면 마감을 누릅니다. 세특은 가져오기를 눌러야 저장됩니다. 최종 점수와 문장은 교사가 확정합니다.</div>
 </div></section>
 <div id="bottom"><button id="prev">◀ 이전</button><div id="dots"></div><button id="next" class="primary">다음 ▶</button></div>
 <script>
