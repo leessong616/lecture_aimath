@@ -109,6 +109,13 @@ code.url{white-space:nowrap;font-size:.8em}ol.steps li{min-height:38px}
 .dl a:hover{border-color:var(--teal)}
 .dl a b{color:var(--teal);flex:none}
 .dl a span{color:var(--mute);font-size:13px;margin-left:auto;flex:none}
+details.kdot{margin:12px 0 0}
+details.kdot summary{display:inline-block;cursor:pointer;padding:8px 16px;border:1px solid var(--line);border-radius:10px;background:var(--paper);font-weight:700;color:var(--teal);list-style:none}
+details.kdot summary::-webkit-details-marker{display:none}
+details.kdot summary:before{content:"▸ "}
+details.kdot[open] summary:before{content:"▾ "}
+details.kdot table{margin-top:10px}
+.kdsrc{margin:8px 0 0;font-size:13px;color:var(--mute)}
 @media(max-width:860px){.covgrid{flex-direction:column;align-items:stretch;gap:26px}.qrcard{width:min(100%,320px)}}
 
 .joincard{margin:18px 0 14px;max-width:560px}
@@ -248,7 +255,15 @@ code.joinurl{font-size:21px;font-weight:700;white-space:nowrap;padding:4px 10px}
 <tr><th>수업 활동</th><th>요구하는 사고(K-DOT)</th><th>반응지시어 예</th></tr>
 <tr><td>D의 위치별 각의 합을 구해 크기 비교</td><td>3 해석·재구성·관계 분석</td><td>비교하시오, 설명하시오</td></tr>
 <tr><td>"합이 180°이면 한 원 위에 있다"는 이유 쓰기</td><td>4 추론·판단·정당화</td><td>입증하시오, 이유를 서술하시오</td></tr>
-</table><p class="sub" style="margin-top:10px">K-DOT는 서·논술형 문항이 요구하는 사고 수준을 1~5로 나눈 기준입니다.</p></div></section>
+</table><p class="sub" style="margin-top:10px">K-DOT는 서·논술형 문항이 요구하는 사고 수준을 1~5로 나눈 기준입니다.</p>
+<details class="kdot"><summary>K-DOT 5수준 표 보기</summary>
+<table class="kd"><tr><th style="width:70px">수준</th><th style="width:34%">요구하는 사고</th><th>반응지시어 예</th></tr>
+<tr><td>1</td><td>회상·재인·단순확인</td><td>쓰시오, 고르시오, 나열하시오</td></tr>
+<tr><td>2</td><td>이해·구분·요약</td><td>구분하시오, 요약하시오, 설명하시오</td></tr>
+<tr><td>3</td><td>해석·재구성·관계분석</td><td>비교하시오, 분석하시오, 설명하시오</td></tr>
+<tr><td>4</td><td>추론·판단·정당화</td><td>입증하시오, 이유를 서술하시오, 판단하시오</td></tr>
+<tr><td>5</td><td>문제해결·종합·창안</td><td>해결 방안을 제안하시오, 설계하시오, 종합하여 서술하시오</td></tr></table>
+<p class="kdsrc">K-DOT(한국형 사고 깊이 측정)는 서울시교육청이 개발한 5수준 기준입니다.</p></details></div></section>
 <section class="page" id="pg19" data-label="확장 · 날개"><div class="inner"><div class="cover"><p class="eyebrow">확장편 · 선택</p>
 <h1>수업에 날개를 달다<br>— 학생 반응을 실시간으로 받아 보기</h1>
 <p class="lead"><span class="ln">앞에서 만든 수업에 구글 시트와 Apps Script를 붙이면, 학생이 쓴 답이 바로 모입니다.</span>
