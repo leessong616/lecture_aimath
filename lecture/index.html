@@ -358,10 +358,12 @@ code.joinurl{font-size:21px;font-weight:700;white-space:nowrap;padding:4px 10px}
 </table></div></section>
 <section class="page" id="pg24" data-label="확장 · 프롬프트"><div class="inner"><h2><span class="no">+</span>Gemini에게 시켜 보기 <span class="tag w">연수 전 시험 필요</span></h2><p class="sub">앞의 1~8번으로 수업을 만든 뒤, 이 프롬프트로 반응 수집을 붙여 봅니다.</p><div class="prompt" style="border-style:dashed">
 <div class="ph"><span class="n" style="background:var(--ocher)">+</span><b>학생 답을 구글 시트로 모으기 <span class="tag w">연수 전 시험 필요</span></b><button class="copy" data-t="p9">복사</button></div>
-<pre id="p9">위 웹 페이지에서 학생이 쓴 답을 내 구글 시트에 모으고 싶어.
-구글 시트의 Apps Script로 답을 받는 코드와, 웹 페이지의 제출 버튼이 그 주소로 보내는 코드를 만들어줘.
-시트 설정과 배포 방법은 초보자 기준으로 단계별로 알려줘.
-같은 학번이 다시 제출하면 한 줄이 새 답으로 바뀌고, 전체 기록은 따로 쌓이게 해줘.</pre>
+<pre id="p9">0. 도입 전시학습에 개념 1~3까지에 해당하는 것도 학생들이 자신의 생각을 입력할 수 있게 수정해줘.
+1. 앱스크립트를 통해서 학생들의 답안을 모으고 싶어.
+2. 교사용 버전과 학생용 버전을 만들어서 학생들은 학번이랑 이름을 써서 접속하고 교사는 교사용 코드를 만들어서 교사용 사이트로 들어가게 하고 싶어.
+3. 교사용 화면은 아래에 학생들이 제출하는 답안을 실시간으로 보일 수 있게 해줘. 대신 이름은 삭제하고 들어왔으면 좋겠어. 그리고 교사가 학생들이 교사의 화면이랑 같은 화면을 볼 수 있도록 따라오는 버튼과, 교사가 보는 화면만 볼 수 있도록 잠그는 제어버튼을 통해서 학생용 화면을 제어할 수 있게 해줘.
+4. 학생의 답안은 작성할 때마다 누적되는 시트 하나 만들고 최종 마지막 답안만 나오는 시트 만들어줘.
+5. 구글 시트에 커스텀 메뉴 만들어서 교사용 코드를 관리할 수 있게 해줘.</pre>
 <div class="why"><div><span class="tag w">미확인</span>사례 수업의 답안 수집은 Claude Code로 만들었습니다. Gemini 대화에서 같은 결과가 나오는지, 화면 미리보기에서 제출이 되는지는 아직 시험하지 않았습니다. 이 단계는 시범으로만 보여 주거나 시험 후 넣으세요</div></div>
 </div></div></section>
 <section class="page" id="pgg" data-label="사례2 · Gemini 접속"><div class="inner"><h2><span class="no">+</span>AIEP에서 교육용 Gemini 열기</h2>
