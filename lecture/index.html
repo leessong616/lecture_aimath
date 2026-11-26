@@ -87,6 +87,9 @@ body{overflow:hidden}
 .p1c .pc-big{color:rgba(180,120,31,.15)}
 .p1c .pc-arrow{color:var(--ocher)}
 .pc-chip.on1{border-color:var(--ocher);background:var(--ocher);color:#fff;box-shadow:0 6px 18px rgba(180,120,31,.28)}
+.pc-key{display:flex;width:fit-content;max-width:100%;flex-direction:column;gap:2px;margin-top:20px;padding:12px 18px;border-radius:14px;background:var(--teal);color:#fff;box-shadow:0 6px 18px rgba(31,122,120,.25)}
+.pc-key b{font-size:17px}
+.pc-key span{font-size:13.5px;opacity:.92}
 .pc-chip.m2{border-color:#a9d3cf;background:rgba(225,241,239,.7);color:var(--teal)}
 @keyframes in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
 .inner{max-width:900px;margin:0 auto}
@@ -356,8 +359,9 @@ code.joinurl{font-size:21px;font-weight:700;white-space:nowrap;padding:4px 10px}
 <section class="page pcover" id="pg25" data-label="사례2 · 표지"><div class="inner"><div class="cover"><div class="pc-path"><div class="pc-chip">본편 · 수업 만들기<small>사례 체험 · Gemini · 점검</small></div><div class="pc-arrow">→</div><div class="pc-chip p1">확장 1 · 날개<small>학생 반응 받기</small></div><div class="pc-arrow">→</div><div class="pc-chip on">확장 2 · 사례 2<small>질문 키우기</small></div></div>
 <p class="eyebrow">확장 2 · 사례 2</p>
 <h1>질문 한 줄씩 키워 가는 수업 만들기<br>— 이차방정식과 이차함수</h1>
-<p class="lead"><span class="ln">하나의 Gemini 대화로 수업 지도안, HTML 수업 자료, 학생 답안 수집까지 이어 간 과정입니다.</span>
-<span class="ln">처음부터 완성본을 요청한 것이 아니라, 질문을 주고받으며 한 걸음씩 키웠습니다.</span></p></div>
+<p class="lead"><span class="ln">하나의 Gemini 대화로 수업 지도안과 HTML 수업 자료를 만든 뒤, 학생 답안을 모으는 단계까지 이어 간 과정입니다.</span>
+<span class="ln">이 사례의 핵심은 마지막 3단계, <b>Apps Script로 학생 답을 모으고 교사 화면에서 실시간으로 보는 것</b>입니다.</span></p>
+<div class="pc-key"><b>★ 핵심 · Apps Script 실습</b><span>학생 답안 수집 · 교사용 화면 · 구글 시트 · 커스텀 메뉴</span></div></div>
 <div class="pc-big">2</div>
 </div></section>
 <section class="page" id="pg26" data-label="사례2 · 세 단계"><div class="inner"><h2><span class="no">+</span>세 단계로 보기</h2><p class="sub">대화 26개 질문을 큰 흐름 세 개로 나누었습니다.</p>
