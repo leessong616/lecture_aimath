@@ -64,6 +64,15 @@ html,body{height:100%}
 body{overflow:hidden}
 #top{position:fixed;top:0;left:0;right:0;height:46px;display:flex;align-items:center;gap:12px;padding:0 16px;background:rgba(250,246,238,.96);border-bottom:1px solid var(--line);z-index:10;font-size:14px;color:var(--mute)}
 #top b{color:var(--ink)}
+#top-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#cnt{flex:none;white-space:nowrap;font-weight:800;font-size:15px;color:var(--ink);background:#f3e3c4;border:1px solid #e2c98f;border-radius:999px;padding:3px 12px;letter-spacing:.02em}
+#top #part{flex:none}
+.dl{margin:14px 0 0}
+.dl p{margin:0 0 8px;font-weight:700}
+.dl a{display:flex;align-items:center;gap:10px;margin:0 0 8px;padding:11px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);text-decoration:none;font-size:16px}
+.dl a:hover{border-color:var(--teal)}
+.dl a b{color:var(--teal);flex:none}
+.dl a span{color:var(--mute);font-size:13px;margin-left:auto;flex:none}
 #bar{position:absolute;left:0;bottom:-1px;height:3px;background:var(--ocher);width:0;transition:width .25s}
 #stage{position:fixed;top:46px;bottom:62px;left:0;right:0;overflow:hidden}
 .page{position:absolute;inset:0;overflow-y:auto;padding:28px 24px 24px;display:none}
@@ -403,6 +412,8 @@ body[data-part=clipo] #dots i.on{background:var(--teal)}
 <div class="card"><span class="tag o">팁 1</span><p style="margin:8px 0 0">풀이가 길어 두 장을 쓴 학생은 그 학생의 장수만 <b>2</b>로 고칩니다. 뒤 학생들이 자동으로 한 칸씩 밀립니다.</p></div>
 <div class="card"><span class="tag o">팁 2</span><p style="margin:8px 0 0">시험지를 내지 않은 학생은 <b>미제출</b>을 체크합니다. 그 번호를 건너뛰고 다음 학생 답안을 맞게 연결합니다.</p></div>
 </div>
+<div class="dl"><p>실습 파일 (수기 답안 스캔본 PDF)</p>
+<a href="files/scan-practice.pdf" download="수기 답안 스캔본 실습 파일.pdf"><b>⬇</b>수기 답안 스캔본 · 실습용<span>PDF · 12쪽 · 4.6MB</span></a></div>
 </div></section>
 <section class="page" id="pg21" data-label="AI 채점" data-part="clipo"><div class="inner"><h2><span class="no">18</span>AI 채점 실행과 색으로 읽기</h2>
 <p class="sub">네 번째 탭 <b>수행평가 채점</b>에서 <b>AI 채점 실행</b>을 누릅니다.</p>
